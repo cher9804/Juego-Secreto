@@ -10,93 +10,93 @@
 
 
 
-// let numeroSecreto = 0;
-// let intentos = 0;
-// let listaNumerosSorteados = [];
-// let numeroMaximo = 10
-// // console.log(numeroSecreto);
+let numeroSecreto = 0;
+let intentos = 0;
+let listaNumerosSorteados = [];
+let numeroMaximo = 10
+// console.log(numeroSecreto);
 
-// function asignarTextoElemento( elemento, texto) {
-//     let elementoHTML = document.querySelector(elemento);
-//     elementoHTML.innerHTML = texto;
-//     return; 
-// };
+function asignarTextoElemento( elemento, texto) {
+    let elementoHTML = document.querySelector(elemento);
+    elementoHTML.innerHTML = texto;
+    return; 
+};
 
-// function verificarIntento() {
-//     let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
-//     // console.log(typeof(numeroDeUsuario)); 
-//     // console.log(numeroSecreto);
-//     // console.log(typeof(numeroSecreto));
-//     // console.log(numeroDeUsuario);
-//     // console.log(numeroDeUsuario === numeroSecreto);
-//     console.log(intentos)
-//     if (numeroDeUsuario === numeroSecreto) {
-//         asignarTextoElemento(`p`,`Acertaste el numero en ${intentos} ${(intentos === 1) ? "vez" : "veces"}`)
-//         document.getElementById("reiniciar").removeAttribute("disabled")
-//     } else {
-//         //El usuario no acerto
-//         if (numeroDeUsuario > numeroSecreto) {
-//             asignarTextoElemento(`p`,`El numero secreto es menor`)
-//         } else {
-//             asignarTextoElemento(`p`,`El numero secreto es mayor`)
-//         }
-//         intentos++
-//         limpiarCaja();
-//     };
-//     // console.log(numeroDeUsuario == numeroSecreto ? alert("Adivinaste el numero") : alert("No acertaste, trata de nuevo")) ---> Yo hice el intento
-//     return;
-// };
-
-
-// function limpiarCaja() {
-//     document.querySelector('#valorUsuario').value = ""
-//     //  let valorCaja = document.querySelector('#valorUsuario');
-//     // valorCaja.value = "";
-// };
+function verificarIntento() {
+    let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
+    // console.log(typeof(numeroDeUsuario)); 
+    // console.log(numeroSecreto);
+    // console.log(typeof(numeroSecreto));
+    // console.log(numeroDeUsuario);
+    // console.log(numeroDeUsuario === numeroSecreto);
+    console.log(intentos)
+    if (numeroDeUsuario === numeroSecreto) {
+        asignarTextoElemento(`p`,`Acertaste el numero en ${intentos} ${(intentos === 1) ? "vez" : "veces"}`)
+        document.getElementById("reiniciar").removeAttribute("disabled")
+    } else {
+        //El usuario no acerto
+        if (numeroDeUsuario > numeroSecreto) {
+            asignarTextoElemento(`p`,`El numero secreto es menor`)
+        } else {
+            asignarTextoElemento(`p`,`El numero secreto es mayor`)
+        }
+        intentos++
+        limpiarCaja();
+    };
+    // console.log(numeroDeUsuario == numeroSecreto ? alert("Adivinaste el numero") : alert("No acertaste, trata de nuevo")) ---> Yo hice el intento
+    return;
+};
 
 
-// function generalNumeroSecreto() {
-//     let numeroGenerado = Math.floor(Math.random()*numeroMaximo)+1;
-//     console.log(numeroGenerado);
-//     console.log(listaNumerosSorteados);
-//     // Si ya sorteamos todos los numeros
-
-//     if(listaNumerosSorteados.length == numeroMaximo) {
-//         asignarTextoElemento(`p`,"Ya se sortearon todos los numeros posibles");
-//     } else { 
-
-//         // Si el numero generado esta incluido en la listas
-
-//         if (listaNumerosSorteados.includes(numeroGenerado)) {
-//             return generalNumeroSecreto();
-//         }else {
-//             listaNumerosSorteados.push(numeroGenerado);
-//             return numeroGenerado;
-//         }
-//     }
-// };
+function limpiarCaja() {
+    document.querySelector('#valorUsuario').value = ""
+    //  let valorCaja = document.querySelector('#valorUsuario');
+    // valorCaja.value = "";
+};
 
 
-// function condicionesIniciales () {
-//     asignarTextoElemento('h1',"Juego del numero secreto X2");
-//     asignarTextoElemento('p',`Indique un numero de 1 al ${numeroMaximo}`);
-//     numeroSecreto = generalNumeroSecreto()
-//     intentos = 1;
-// };
+function generalNumeroSecreto() {
+    let numeroGenerado = Math.floor(Math.random()*numeroMaximo)+1;
+    console.log(numeroGenerado);
+    console.log(listaNumerosSorteados);
+    // Si ya sorteamos todos los numeros
+
+    if(listaNumerosSorteados.length == numeroMaximo) {
+        asignarTextoElemento(`p`,"Ya se sortearon todos los numeros posibles");
+    } else { 
+
+        // Si el numero generado esta incluido en la listas
+
+        if (listaNumerosSorteados.includes(numeroGenerado)) {
+            return generalNumeroSecreto();
+        }else {
+            listaNumerosSorteados.push(numeroGenerado);
+            return numeroGenerado;
+        }
+    }
+};
 
 
-// function reiniciarJuego() {
-//     // Limpiar caja
-//     limpiarCaja();
-//     // indicar mensaje de intervalo de numero
-//     // generar numero aleatorio
-//     // inicializar el numero de intentos
-//     condicionesIniciales();
-//     // Desabilitar el boton de nuevo juego
-//     document.querySelector('#reiniciar').setAttribute("disabled","true")
-// };
+function condicionesIniciales () {
+    asignarTextoElemento('h1',"Juego del numero secreto X2");
+    asignarTextoElemento('p',`Indique un numero de 1 al ${numeroMaximo}`);
+    numeroSecreto = generalNumeroSecreto()
+    intentos = 1;
+};
 
-// condicionesIniciales(); 
+
+function reiniciarJuego() {
+    // Limpiar caja
+    limpiarCaja();
+    // indicar mensaje de intervalo de numero
+    // generar numero aleatorio
+    // inicializar el numero de intentos
+    condicionesIniciales();
+    // Desabilitar el boton de nuevo juego
+    document.querySelector('#reiniciar').setAttribute("disabled","true")
+};
+
+condicionesIniciales(); 
 
 
 
@@ -347,19 +347,19 @@
 
 
 
-function promedioLista(lista){
-    let suma = 0;
-    for (let x = 0 ; x < lista.length; x++){
-        suma += lista[x];
-        console.log(suma);
-    };
-    return suma/lista.length
-};
+// function promedioLista(lista){
+//     let suma = 0;
+//     for (let x = 0 ; x < lista.length; x++){
+//         suma += lista[x];
+//         console.log(suma);
+//     };
+//     return suma/lista.length
+// };
 
-let listaNumeros = [5,5,10];
-promedioLista(listaNumeros);
-let media = promedioLista(listaNumeros); 
-console.log("Media: " + media);
+// let listaNumeros = [5,5,10];
+// promedioLista(listaNumeros);
+// let media = promedioLista(listaNumeros); 
+// console.log("Media: " + media);
 
 
 // function calcularMedia(lista) {
@@ -373,3 +373,80 @@ console.log("Media: " + media);
 //   let numeros = [10, 20, 30, 40, 50];
 //   let media = calcularMedia(numeros);
 //   console.log('Média:', media);
+
+
+// function menorMayor(lista){
+//     for (let x = 0 ; x >= lista.length; x++) {
+//         if (lista[x] >= lista[x+1]) {
+
+
+//         }
+//         mayor = lista[x] > 
+
+//     }
+// }
+
+// // let numeros = [5,10,4,9];
+
+
+// function suma(lista) {
+//     suma = 0;
+//     for (let x = 0; x < lista.length ; x++){
+//         suma += lista[x];
+//     };
+//     return suma;
+
+// };
+
+// let numeros = [5,6,4];
+// let sumaNumeros = suma(numeros);
+
+// console.log(`La suma de la lista es ${sumaNumeros}`)
+
+
+
+
+
+// function encontrarMayorMenor(lista) {
+//     let mayor = lista[0];
+//     let menor = lista[0];
+  
+//     for (let i = 1; i < lista.length; i++) {
+//       if (lista[i] > mayor) {
+//         mayor = lista[i];
+//       }
+//       if (lista[i] < menor) {
+//         menor = lista[i];
+//       }
+//     }
+  
+//     console.log('Mayor:', mayor);
+//     console.log('Menor:', menor);
+//   }
+  
+//   let numeros = [15, 8, 25, 5, 12];
+//   encontrarMayorMenor(numeros);
+
+
+
+// function calcularSuma(lista) {
+//     let suma = 0;
+//     for (let i = 0; i < lista.length; i++) {
+//       suma += lista[i];
+//     }
+//     return suma;
+//   }
+  
+//   let numeros = [15, 8, 25, 5, 12];
+//   let suma = calcularSuma(numeros);
+//   console.log('Suma:', suma);
+
+
+
+
+
+
+
+
+
+
